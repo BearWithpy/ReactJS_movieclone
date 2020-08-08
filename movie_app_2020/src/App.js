@@ -13,7 +13,7 @@ function Food({ fav }) {
 function App() {
   return (
     <div>
-      <h1>Hello World!!!!!!</h1>
+      {/* <h1>Hello World!!!!!!</h1> */}
       {/* <Potato /> */}
       {/* <Beef /> */}
       <Food fav="kimchi" something={true} array={["hello", 1, 2, 3, 4]} />
