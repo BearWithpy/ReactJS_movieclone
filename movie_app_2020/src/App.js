@@ -1,19 +1,27 @@
 import React from "react";
 import Potato from "./Potato";
+import PropTypes from "prop-types";
 
 function Beef() {
   return <h1>I love steak❤</h1>;
 }
 
-function Food({ name, picture }) {
+function Food({ name, picture, rating }) {
   // << props.name와 같음
   return (
     <div>
       <h1>I love {name}❤</h1>
+      <h4>{rating}/5.0</h4>
       <img src={picture} alt={name}></img>{" "}
     </div>
   );
 }
+
+Food.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  rating: PropTypes.number,
+};
 
 const foodIlike = [
   {
@@ -53,10 +61,6 @@ const foodIlike = [
   },
 ];
 
-function renderFood(dish) {
-  return <Food name={dish.name} picture={dish.image} />;
-}
-
 function App() {
   return (
     <div>
@@ -67,7 +71,14 @@ function App() {
       {/* {foodIlike.map((dish) => (
         <Food name={dish.name} picture={dish.image} />
       ))} */}
-      {foodIlike.map(renderFood)}
+      {foodIlike.map((dish) => (
+        <Food
+          key={dish.id}
+          name={dish.name}
+          picture={dish.image}
+          rating={dish.rating}
+        />
+      ))}
     </div>
   );
 }
