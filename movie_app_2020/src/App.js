@@ -12,6 +12,7 @@ class App extends React.Component {
   };
   sub = () => {
     this.setState((current) => ({ count: current.count-- }));
+    // Using a "current" method is way better!
   };
 
   render() {
