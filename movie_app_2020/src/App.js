@@ -1,21 +1,35 @@
 import React from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("hello");
+  }
   state = {
     count: 0,
   };
 
   add = () => {
-    this.setState({ count: this.state.count + 1 });
-    //It's bad...
+    this.setState((current) => ({ count: current.count++ }));
   };
   sub = () => {
     this.setState((current) => ({ count: current.count-- }));
     // Using a "current" method is way better!
   };
 
+  componentDidMount() {
+    console.log("Component rendered");
+  }
+  componentDidUpdate() {
+    console.log("I'm updated");
+  }
+  componentWillUnmount() {
+    console.log("Goodbye, cruel world");
+  }
+
   render() {
+    console.log("I'm rendering");
     return (
       <div>
         <h1>The Number is {this.state.count}</h1>
