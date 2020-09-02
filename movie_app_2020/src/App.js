@@ -1,5 +1,5 @@
 import React from "react";
-import axiox from "axios";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
