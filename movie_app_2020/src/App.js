@@ -1,4 +1,5 @@
 import React from "react";
+import axiox from "axios";
 
 class App extends React.Component {
   state = {
@@ -6,10 +7,12 @@ class App extends React.Component {
     movies: [],
   };
 
+  getMovies = async () => {
+    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+  };
+
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 6000);
+    this.getMovies();
   }
 
   render() {
@@ -19,5 +22,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// 20200829 Review
