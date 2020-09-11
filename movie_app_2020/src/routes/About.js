@@ -10,6 +10,12 @@ function About(props) {
         granted, all else follows.”
       </span>
       <span>− George Orwell, 1984</span>
+      <hr />
+      <br />
+      <br />
+      <br />
+      <span> Cloned by Jason </span>
+      <span>So confused to style with CSS... Help me :( </span>
     </div>
   );
 }
