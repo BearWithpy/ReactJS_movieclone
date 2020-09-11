@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
+
 class App extends React.Component {
   state = {
     isLoading: true,
@@ -20,6 +21,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getMovies();
   }
+
   render() {
     const { isLoading, movies } = this.state;
     return (
