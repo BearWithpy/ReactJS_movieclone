@@ -21,7 +21,6 @@ class Home extends React.Component {
   componentDidMount() {
     this.getMovies();
   }
-
   render() {
     const { isLoading, movies } = this.state;
     return (
@@ -49,4 +48,5 @@ class Home extends React.Component {
     );
   }
 }
+
 export default Home;
